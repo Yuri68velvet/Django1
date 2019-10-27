@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Products Listed</h1>
+    {% for product in products %}
+    
+    {% comment %} {{product.price}}
+    {{product.quantity}} {% endcomment %}
+   <a href="{% url 'update_product' product.id %}">
+   <li> {{product.description}}</li>
+</a>
+    {% endfor %}
+
+<a href="{% url 'create_product' %}">New Product</a>
+</body>
+</html>
